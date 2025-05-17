@@ -1,0 +1,39 @@
+services:
+  all_packages:
+    container_name: all_packages
+    hostname: all_packages
+    image: uwrobosoccer/all_packages:dev # Will Change
+    privileged: true
+    volumes:
+      - /dev/:/dev/
+      - type: bind
+        source: ../robosoccer_behaviour
+        target: /home/dev/ros2_ws/src/robosoccer_behaviour
+      - type: bind
+        source: ../robosoccer_control
+        target: /home/dev/ros2_ws/src/robosoccer_control
+      - type: bind
+        source: ../robosoccer_firmware
+        target: /home/dev/ros2_ws/src/robosoccer_firmware
+      - type: bind
+        source: ../robosoccer_localization
+        target: /home/dev/ros2_ws/src/robosoccer_localization
+      - type: bind
+        source: ../robosoccer_motion
+        target: /home/dev/ros2_ws/src/robosoccer_motion
+      - type: bind
+        source: ../robosoccer_perception
+        target: /home/dev/ros2_ws/src/robosoccer_perception
+      - type: bind
+        source: ../robosoccer_world_model
+        target: /home/dev/ros2_ws/src/robosoccer_world_model
+      - type: bind
+        source: ~/.vscode
+        target: /home/dev/.vscode
+    entrypoint:
+      - /bin/bash
+    stdin_open: true
+    tty: true
+    environment:
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID} # Pass through the domain
+  

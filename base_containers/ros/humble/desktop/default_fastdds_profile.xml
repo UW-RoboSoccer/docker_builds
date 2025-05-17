@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dds xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <profiles xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+    <transport_descriptors>
+      <!-- Create a descriptor for the new transport -->
+      <transport_descriptor>
+        <transport_id>4gb_shm</transport_id>
+        <type>SHM</type>
+        <segment_size>4294967296</segment_size>
+      </transport_descriptor>
+    </transport_descriptors>
+    <!-- Default participant profile -->
+    <participant profile_name="default participant profile" is_default_profile="true">
+      <rtps>
+        <userTransports>
+          <transport_id>4gb_shm</transport_id>
+        </userTransports>
+        <useBuiltinTransports>false</useBuiltinTransports>
+        <builtin>
+          <discovery_config>
+            <ignoreParticipantFlags>FILTER_DIFFERENT_HOST</ignoreParticipantFlags>
+          </discovery_config>
+        </builtin>
+      </rtps>
+    </participant>
+
+    <!-- Default publisher profile -->
+    <publisher profile_name="default publisher profile" is_default_profile="true">
+      <qos>
+        <data_sharing>
+          <kind>AUTOMATIC</kind>
+        </data_sharing>
+      </qos>
+      <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+    </publisher>
+
+    <!-- Default subscription profile -->
+    <subscriber profile_name="default subscription profile" is_default_profile="true">
+      <qos>
+        <data_sharing>
+          <kind>AUTOMATIC</kind>
+        </data_sharing>
+      </qos>
+      <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+    </subscriber>
+  </profiles>
+</dds>

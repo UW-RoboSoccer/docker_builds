@@ -1,0 +1,7 @@
+../robosoccer_behaviour git@github.com:UW-RoboSoccer/robosoccer_behaviour.git
+../robosoccer_firmware git@github.com:UW-RoboSoccer/robosoccer_firmware.git
+../robosoccer_control git@github.com:UW-RoboSoccer/robosoccer_control.git
+../robosoccer_localization git@github.com:UW-RoboSoccer/robosoccer_localization.git
+../robosoccer_perception git@github.com:UW-RoboSoccer/robosoccer_perception.git
+../robosoccer_world_model git@github.com:UW-RoboSoccer/robosoccer_world_model.git
+../robosoccer_motion git@github.com:UW-RoboSoccer/robosoccer_motion.git
